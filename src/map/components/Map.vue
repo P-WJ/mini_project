@@ -26,7 +26,7 @@
       >
         <div class="flex justify-between items-center mb-4">
           <h3
-            class="text-2xl font-extrabold bg-gradient-to-r from-green-500 via-blue-600 to-purple-600 bg-clip-text text-transparent truncate"
+            class="text-2xl font-extrabold bg-gradient-to-r from-green-500 via-blue-600 to-purple-600 bg-clip-text truncate"
           >
             {{ selectedPlace.title }}
           </h3>

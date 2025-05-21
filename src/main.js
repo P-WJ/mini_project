@@ -9,7 +9,6 @@ import "./assets/tailwind.css";
 import router from "./components/router";
 import { createPinia } from "pinia";
 import piniaPluginPersistedstate from "pinia-plugin-persistedstate";
-import { useKakao } from "vue3-kakao-maps/@utils";
 
 const app = createApp(App);
 
@@ -21,4 +20,3 @@ pinia.use(piniaPluginPersistedstate);
 app.use(pinia); // ✅ 상태 관리
 app.use(router); // ✅ 라우터 등록
 app.mount("#app"); // ✅ 마운트
-useKakao("API key");
