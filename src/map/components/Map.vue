@@ -65,7 +65,7 @@
     </transition>
 
     <!-- 관광지 슬라이더 -->
-    <p class="text-lg font-semibold px-6 mt-6 mb-2">🔥 근처 인기 관광지</p>
+    <p class="text-lg font-semibold px-6 mt-6 mb-2">🔥 근처 관광지</p>
     <div
       class="rounded-b-3xl px-6 pb-4 flex gap-5 overflow-x-auto scrollbar-none"
     >
