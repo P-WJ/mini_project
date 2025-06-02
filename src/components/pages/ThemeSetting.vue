@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { useThemeStore } from "../../store/theme";
+import { useThemeStore } from "../store/theme";
 
 const themeStore = useThemeStore();
 const setColor = themeStore.setColor;

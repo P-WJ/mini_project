@@ -8,10 +8,10 @@ export const useModalStore = defineStore("modal", {
     onConfirm: null,
   }),
   actions: {
-    open({ title, message }) {
+    open({ title, message, onConfirm }) {
       this.title = title;
       this.message = message;
-      this.onConfirm = this.onConfirm;
+      this.onConfirm = onConfirm;
       this.isOpen = true;
     },
     close() {
@@ -20,9 +20,9 @@ export const useModalStore = defineStore("modal", {
     },
     confirm() {
       if (typeof this.onConfirm === "function") {
-        this.onConfirm();
+        this.onConfirm(); // ✅ 부모에서 전달한 콜백 실행
       }
-      this.close();
+      this.close(); // ✅ 모달 닫기
     },
   },
 });

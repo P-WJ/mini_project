@@ -43,8 +43,8 @@
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
-import { useAuthStore } from "../../map/store/UserData";
-import { useModalStore } from "../../map/store/modal";
+import { useAuthStore } from "../store/UserData";
+import { useModalStore } from "../store/modal";
 
 const form = reactive({
   email: "",
@@ -58,8 +58,7 @@ const modal = useModalStore();
 
 const loginAction = () => {
   localStorage.setItem("isLogin", "TRUE");
-  localStorage.setItem("email", email.value);
-  router.push("/home");
+  localStorage.setItem("email", form.email);
 };
 
 const checkLogin = async () => {
@@ -84,13 +83,15 @@ const checkLogin = async () => {
       modal.open({
         title: "로그인 성공",
         message: `${matchedUser.email} 로 로그인`,
+        hasCancel: false,
         onConfirm: loginAction,
       });
-      router.push("/memberList");
+      router.push("/home");
     } else {
       modal.open({
         title: "로그인 실패",
         message: "아이디 또는 비밀번호가 틀렸습니다.",
+        hasCancel: false,
       });
     }
   } catch (error) {
@@ -98,6 +99,7 @@ const checkLogin = async () => {
     modal.open({
       title: "로그인 실패",
       message: "서버 오류로 로그인 실패",
+      hasCancel: false,
     });
   }
 };
